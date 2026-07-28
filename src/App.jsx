@@ -8,14 +8,14 @@ import Keyboard from "./components/Keyboard"
 import NewGame from "./components/NewGame"
 
 /**
- * Goal: Allow the user to start guessing the letters
+ * Goal: Add in the incorrect guesses mechanism to the game
  * 
- * Challenge: Update the keyboard when a letter is right
- * or wrong.
+ * Challenge: When mapping over the languages, determine how
+ * many of them have been "lost" and add the "lost" class if
+ * so.
  * 
- * Bonus: use the `clsx` package to easily add conditional 
- * classNames to the keys of the keyboard. Check the docs 
- * to learn how to use it 📖
+ * Hint: use the wrongGuessCount combined with the index of
+ * the item in the array while inside the languages.map code
  */
 
 export default function AssemblyEndgame() {
