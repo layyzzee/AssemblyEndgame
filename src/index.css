@@ -54,10 +54,20 @@ body {
   gap: 2px;
   max-width: 350px;
   justify-content: center;
-  margin: 0 auto;
+  margin: 0 auto 50px;
 }
 
 .chip {
   border-radius: 5px;
   padding: 5px;
+}
+
+.word-container {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.letter {
+  
 }
