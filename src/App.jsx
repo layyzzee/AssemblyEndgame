@@ -7,11 +7,14 @@ import Keyboard from "./components/Keyboard"
 import NewGame from "./components/NewGame"
 
 /**
- * Goal: Build out the main parts of our app
+ * Goal: Allow the user to start guessing the letters
  * 
- * Challenge: 
- * Display the keyboard ⌨️. Use <button>s for each letter
- * since it'll need to be clickable and tab-accessible.
+ * Challenge: Update the keyboard when a letter is right
+ * or wrong.
+ * 
+ * Bonus: use the `clsx` package to easily add conditional 
+ * classNames to the keys of the keyboard. Check the docs 
+ * to learn how to use it 📖
  */
 
 export default function AssemblyEndgame() {
