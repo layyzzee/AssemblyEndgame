@@ -98,11 +98,19 @@ gap: 10px;
 cursor: pointer;
 }
 
+.keyboard-button.guessed.correct {
+  background-color: #1FB15F;
+}
+
+.keyboard-button.guessed.wrong {
+  background-color: #D02B2B;
+}
+
 .new-game-button {
   display:flex;
   justify-content: center;
   align-items: center;
-  background-color: #00ccff;
+  background-color: #2ED3E9;
   border: 1px solid #f5f5f5;
   border-radius: 5px;
   height: 40px;
@@ -110,3 +118,4 @@ cursor: pointer;
   margin: 0 auto;
   cursor: pointer;
 }
+

@@ -1,4 +1,5 @@
 import { useState } from "react"
+import clsx from "clsx"
 import Header from "./components/Header"
 import Status from "./components/Status"
 import Languages from "./components/Languages"
@@ -21,7 +22,7 @@ export default function AssemblyEndgame() {
 
   const [isOver, setIsOver] = useState(true)
 
-  const [currentWord, setCurrentWord] = useState("React")
+  const [currentWord, setCurrentWord] = useState("REACT")
 
   const alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("")
 
@@ -38,7 +39,10 @@ export default function AssemblyEndgame() {
       {isOver && <Status />}
       <Languages />
       <CurrentWord currentWord={currentWord} />
-      <Keyboard alphabet={alphabet} guessLetter={guessLetter}/>
+      <Keyboard alphabet={alphabet}
+      guessedLetters={guessedLetters} 
+      guessLetter={guessLetter} 
+      currentWord={currentWord}/>
       {isOver && <NewGame />}
     </main>
   )
