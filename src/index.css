@@ -47,3 +47,17 @@ body {
 .status-description {
   margin-top: 0px;
 }
+
+.languages-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  max-width: 350px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.chip {
+  border-radius: 5px;
+  padding: 5px;
+}
