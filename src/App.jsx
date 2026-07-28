@@ -1,4 +1,5 @@
 import {useState} from "react"
+import Header from "./components/Header"
 
 /**
  * Goal: Build out the main parts of our app
@@ -10,7 +11,7 @@ import {useState} from "react"
 export default function Hangman() {
     return (
         <main>
-            Game goes here
+            <Header />
         </main>
     )
 }
