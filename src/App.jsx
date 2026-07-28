@@ -1,5 +1,6 @@
 import {useState} from "react"
 import Header from "./components/Header"
+import Status from "./components/Status"
 
 /**
  * Goal: Build out the main parts of our app
@@ -9,9 +10,13 @@ import Header from "./components/Header"
  */
 
 export default function AssemblyEndgame() {
+
+  const [isWon, setIsWon] = useState(true)
+
     return (
         <main>
             <Header />
+            {isWon && <Status />}
         </main>
     )
 }
