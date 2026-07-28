@@ -22,13 +22,20 @@ export default function AssemblyEndgame() {
 
   const alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("")
 
+  const [guessedLetters, setGuessedLetters] = useState([])
+  console.log(guessedLetters)
+
+  function guessLetter(letter) {
+    setGuessedLetters(prev => prev.includes(letter) ? prev : [...prev, letter])
+  }
+
   return (
     <main>
       <Header />
       {isOver && <Status />}
       <Languages />
       <CurrentWord currentWord={currentWord} />
-      <Keyboard alphabet={alphabet}/>
+      <Keyboard alphabet={alphabet} guessLetter={guessLetter}/>
       {isOver && <NewGame />}
     </main>
   )
