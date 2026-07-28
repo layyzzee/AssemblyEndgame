@@ -21,13 +21,15 @@ import NewGame from "./components/NewGame"
 export default function AssemblyEndgame() {
 
   const [isOver, setIsOver] = useState(true)
-
   const [currentWord, setCurrentWord] = useState("REACT")
+  const [guessedLetters, setGuessedLetters] = useState([])
+
+  const wrongGuessCount = guessedLetters.filter(letter =>
+    !currentWord.includes(letter)).length
+  
 
   const alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("")
 
-  const [guessedLetters, setGuessedLetters] = useState([])
-  console.log(guessedLetters)
 
   function guessLetter(letter) {
     setGuessedLetters(prev => prev.includes(letter) ? prev : [...prev, letter])
@@ -38,15 +40,15 @@ export default function AssemblyEndgame() {
       <Header />
       {isOver && <Status />}
       <Languages />
-      <CurrentWord 
-      currentWord={currentWord}
-      guessedLetters={guessedLetters}
-       />
-      <Keyboard 
-      alphabet={alphabet}
-      guessedLetters={guessedLetters} 
-      guessLetter={guessLetter} 
-      currentWord={currentWord}/>
+      <CurrentWord
+        currentWord={currentWord}
+        guessedLetters={guessedLetters}
+      />
+      <Keyboard
+        alphabet={alphabet}
+        guessedLetters={guessedLetters}
+        guessLetter={guessLetter}
+        currentWord={currentWord} />
       {isOver && <NewGame />}
     </main>
   )
