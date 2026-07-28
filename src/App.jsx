@@ -38,8 +38,12 @@ export default function AssemblyEndgame() {
       <Header />
       {isOver && <Status />}
       <Languages />
-      <CurrentWord currentWord={currentWord} />
-      <Keyboard alphabet={alphabet}
+      <CurrentWord 
+      currentWord={currentWord}
+      guessedLetters={guessedLetters}
+       />
+      <Keyboard 
+      alphabet={alphabet}
       guessedLetters={guessedLetters} 
       guessLetter={guessLetter} 
       currentWord={currentWord}/>
