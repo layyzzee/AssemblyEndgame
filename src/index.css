@@ -54,7 +54,7 @@ body {
   gap: 2px;
   max-width: 350px;
   justify-content: center;
-  margin: 0 auto 50px;
+  margin: 0 auto 25px;
 }
 
 .chip {
@@ -66,6 +66,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 5px;
+  margin-bottom: 40px;
 }
 
 .letter {
@@ -76,4 +77,23 @@ body {
   justify-content: center;
   align-items: center;
   border-bottom: 1.5px solid #f5f5f5;
+}
+
+.keyboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.keyboard-button {
+height: 30px;
+width: 30px;
+border-radius: 5px;
+background-color: goldenrod;
+border: 1px solid #f5f5f5;
+gap: 10px;
+cursor: pointer;
 }
