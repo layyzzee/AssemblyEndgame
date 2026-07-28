@@ -1,6 +1,7 @@
 import {useState} from "react"
 import Header from "./components/Header"
 import Status from "./components/Status"
+import Languages from "./components/Languages"
 
 /**
  * Goal: Build out the main parts of our app
@@ -17,6 +18,7 @@ export default function AssemblyEndgame() {
         <main>
             <Header />
             {isWon && <Status />}
+            <Languages />
         </main>
     )
 }
