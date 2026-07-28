@@ -8,7 +8,7 @@ import Header from "./components/Header"
  * and description. Startin' out easy 🙂🚶‍➡️
  */
 
-export default function Hangman() {
+export default function AssemblyEndgame() {
     return (
         <main>
             <Header />
