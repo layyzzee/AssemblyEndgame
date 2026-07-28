@@ -4,6 +4,7 @@ import Status from "./components/Status"
 import Languages from "./components/Languages"
 import CurrentWord from "./components/CurrentWord"
 import Keyboard from "./components/Keyboard"
+import NewGame from "./components/NewGame"
 
 /**
  * Goal: Build out the main parts of our app
@@ -15,7 +16,7 @@ import Keyboard from "./components/Keyboard"
 
 export default function AssemblyEndgame() {
 
-  const [isWon, setIsWon] = useState(true)
+  const [isOver, setIsOver] = useState(true)
 
   const [currentWord, setCurrentWord] = useState("React")
 
@@ -24,10 +25,11 @@ export default function AssemblyEndgame() {
   return (
     <main>
       <Header />
-      {isWon && <Status />}
+      {isOver && <Status />}
       <Languages />
       <CurrentWord currentWord={currentWord} />
       <Keyboard alphabet={alphabet}/>
+      {isOver && <NewGame />}
     </main>
   )
 }
