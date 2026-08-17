@@ -154,11 +154,11 @@ cursor: pointer;
 
 .farewell-correct {
   display: flex;
+  text-align: center;
   justify-content: center;
-  align-items: center;
   background-color: #1FB15F;
   max-width: 250px;
-  height: 30px;
+  height: 50px;
   border-radius: 5px;
   font-size: 1.2rem;
   margin: 0 auto 25px;
@@ -166,11 +166,11 @@ cursor: pointer;
 
 .farewell-wrong {
   display: flex;
+  text-align: center;
   justify-content: center;
-  align-items: center;
   background-color: #D02B2B;
   max-width: 250px;
-  height: 30px;
+  height: 50px;
   border-radius: 5px;
   font-size: 1.2rem;
   margin: 0 auto 25px;
