@@ -12,11 +12,10 @@ export default function Share({ currentWord, guessedLetters, isGameWon }) {
         / (1000 * 60 * 60 * 24)) + 1
 
 async function shareResults() {
-const shareText =`🎮 Hangman #${hangmanNumber} ${correctGuesses}/5
+const shareText =`🎮 HangFive #${hangmanNumber} ${correctGuesses}/5
 ${guessResults}
 ${isGameWon ?
-`Won in ${guessedLetters.length} guesses` :}
-Download here: https://github.com/layyzzee/AssemblyEndgame`
+`Won in ${guessedLetters.length} guesses\n` : ""}Download here: https://github.com/layyzzee/AssemblyEndgame`
 
         try {
             await navigator.clipboard.writeText(shareText)
