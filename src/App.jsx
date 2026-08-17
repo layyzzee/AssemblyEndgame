@@ -23,16 +23,17 @@ export default function AssemblyEndgame() {
     setGuessedLetters(prev => prev.includes(letter) ? prev : [...prev, letter])
   }
 
-function startNewGame() {
+  function startNewGame() {
     setCurrentWord(getRandomWord().toUpperCase())
     setGuessedLetters([])
   }
-
+  
+  const numGuessesLeft = languages.length - 1
   const isGameWon = currentWord.split("").every(letter => guessedLetters.includes(letter))
-  const isGameLost = wrongGuessCount >= languages.length - 1
+  const isGameLost = wrongGuessCount >= numGuessesLeft
   const isGameOver = isGameWon || isGameLost
   const lastGuessedLetter = guessedLetters[guessedLetters.length - 1]
-  const numGuessesLeft = languages.length - 1
+
 
   return (
     <main>
@@ -48,6 +49,7 @@ function startNewGame() {
       <CurrentWord
         currentWord={currentWord}
         guessedLetters={guessedLetters}
+        isGameLost={isGameLost}
       />
       <section
         className="sr-only"
@@ -72,8 +74,8 @@ function startNewGame() {
         guessLetter={guessLetter}
         currentWord={currentWord}
         isGameOver={isGameOver} />
-      {isGameOver && <NewGame 
-      startNewGame={startNewGame} />}
+      {isGameOver && <NewGame
+        startNewGame={startNewGame} />}
     </main>
   )
 }
