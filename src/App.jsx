@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { getFarewellText, getRandomWord } from "./utils"
+import { getDailyWord, getFarewellText } from "./utils"
 import { languages } from "./languages"
 import Confetti from "react-confetti"
 import clsx from "clsx"
@@ -15,7 +15,7 @@ import ScreenReader from "./components/ScreenReader"
 
 export default function AssemblyEndgame() {
 
-  const [currentWord, setCurrentWord] = useState(() => getRandomWord().toUpperCase())
+  const [currentWord, setCurrentWord] = useState(() => getDailyWord().toUpperCase())
   const [guessedLetters, setGuessedLetters] = useState([])
 
   const wrongGuessCount = guessedLetters.filter(letter =>
@@ -24,11 +24,6 @@ export default function AssemblyEndgame() {
   const alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("")
   function guessLetter(letter) {
     setGuessedLetters(prev => prev.includes(letter) ? prev : [...prev, letter])
-  }
-
-  function startNewGame() {
-    setCurrentWord(getRandomWord().toUpperCase())
-    setGuessedLetters([])
   }
 
   const numGuessesLeft = languages.length - 1
