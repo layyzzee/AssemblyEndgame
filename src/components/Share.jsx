@@ -3,7 +3,7 @@ import { useState } from "react"
 export default function Share({ currentWord, guessedLetters, isGameWon }) {
     const [copied, setCopied] = useState(false)
 
-    const guessResults = guessedLetters.map(letter =>currentWord
+    const guessResults = currentWord.split("").map(letter => guessedLetters
         .includes(letter) ? "🟩" : "🟥").join("")
 
     const hangmanNumber = Math.floor((new Date() - new Date("2026-08-17")) 
