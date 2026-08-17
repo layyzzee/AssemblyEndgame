@@ -12,7 +12,7 @@ import Farewell from "./components/Farewell"
 
 export default function AssemblyEndgame() {
 
-  const [currentWord, setCurrentWord] = useState(getRandomWord().toUpperCase())
+  const [currentWord, setCurrentWord] = useState(() => getRandomWord().toUpperCase())
   const [guessedLetters, setGuessedLetters] = useState([])
 
   const wrongGuessCount = guessedLetters.filter(letter =>
