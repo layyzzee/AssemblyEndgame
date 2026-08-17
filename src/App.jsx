@@ -11,6 +11,7 @@ import Keyboard from "./components/Keyboard"
 import NewGame from "./components/NewGame"
 import Farewell from "./components/Farewell"
 import GuessCounter from "./components/GuessCounter"
+import ScreenReader from "./components/ScreenReader"
 
 export default function AssemblyEndgame() {
 
@@ -58,23 +59,13 @@ export default function AssemblyEndgame() {
         guessedLetters={guessedLetters}
         isGameLost={isGameLost}
       />
-      <section
-        className="sr-only"
-        aria-live="polite"
-        role="status"
-      >
-        <p>
-          {currentWord.includes(lastGuessedLetter) ?
-            `Correct! The letter ${lastGuessedLetter} is in the word.` :
-            `Sorry, the letter ${lastGuessedLetter} is not in the word.`
-          }
-          You have {numGuessesLeft} attempts left.
-        </p>
-        <p>Current word: {currentWord.split("").map(letter =>
-          guessedLetters.includes(letter) ? letter + "." : "blank.")
-          .join(" ")}</p>
-
-      </section>
+      <ScreenReader
+        lastGuessedLetter={lastGuessedLetter}
+        currentWord={currentWord}
+        guessedLetters={guessedLetters}
+        numGuessesLeft={numGuessesLeft}
+        wrongGuessCount={wrongGuessCount}
+      />
       <GuessCounter
         numGuessesLeft={numGuessesLeft}
         wrongGuessCount={wrongGuessCount} />
