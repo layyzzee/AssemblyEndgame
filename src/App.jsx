@@ -10,6 +10,7 @@ import CurrentWord from "./components/CurrentWord"
 import Keyboard from "./components/Keyboard"
 import NewGame from "./components/NewGame"
 import Farewell from "./components/Farewell"
+import GuessCounter from "./components/GuessCounter"
 
 export default function AssemblyEndgame() {
 
@@ -74,6 +75,9 @@ export default function AssemblyEndgame() {
           .join(" ")}</p>
 
       </section>
+      <GuessCounter
+        numGuessesLeft={numGuessesLeft}
+        wrongGuessCount={wrongGuessCount} />
       <Keyboard
         alphabet={alphabet}
         guessedLetters={guessedLetters}
