@@ -28,7 +28,8 @@ export default function AssemblyEndgame() {
   return (
     <main>
       <Header />
-      {isGameWon && <Status />}
+      {isGameOver && <Status 
+      isGameWon={isGameWon} />}
       <Languages
         wrongGuessCount={wrongGuessCount}
       />
