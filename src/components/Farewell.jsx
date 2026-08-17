@@ -5,7 +5,7 @@ export default function Farewell(props) {
     const lastGuess = props.guessedLetters[props.guessedLetters.length - 1]
 
     if (!lastGuess) {
-        return null
+        return <div className="farewell-empty">Guess your first Letter!</div>
     } else if (props.currentWord.includes(lastGuess)) {
         return <div className="farewell-correct">{lastGuess} is Correct!</div>
     } else {
