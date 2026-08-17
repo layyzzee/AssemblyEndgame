@@ -1,18 +1,18 @@
 import { useState } from "react"
-import clsx from "clsx"
+import { getFarewellText, getRandomWord } from "./utils"
 import { languages } from "./languages"
+import clsx from "clsx"
 import Header from "./components/Header"
 import Status from "./components/Status"
 import Languages from "./components/Languages"
 import CurrentWord from "./components/CurrentWord"
 import Keyboard from "./components/Keyboard"
 import NewGame from "./components/NewGame"
-import { getFarewellText } from "./utils"
 import Farewell from "./components/Farewell"
 
 export default function AssemblyEndgame() {
 
-  const [currentWord, setCurrentWord] = useState("REACT")
+  const [currentWord, setCurrentWord] = useState(getRandomWord().toUpperCase())
   const [guessedLetters, setGuessedLetters] = useState([])
 
   const wrongGuessCount = guessedLetters.filter(letter =>
