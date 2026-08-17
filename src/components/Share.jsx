@@ -6,16 +6,18 @@ export default function Share({ currentWord, guessedLetters, isGameWon }) {
     const guessResults = currentWord.split("").map(letter => guessedLetters
         .includes(letter) ? "🟩" : "🟥").join("")
 
-        const correctGuesses = guessedLetters.filter(letter => currentWord.includes(letter)).length
+    const correctGuesses = guessedLetters.filter(letter => currentWord.includes(letter)).length
 
-    const hangmanNumber = Math.floor((new Date() - new Date("2026-08-17")) 
-    / (1000 * 60 * 60 * 24)) + 1
+    const hangmanNumber = Math.floor((new Date() - new Date("2026-08-17"))
+        / (1000 * 60 * 60 * 24)) + 1
 
-    async function shareResults() {
-        const shareText = `🎮 Hangman #${hangmanNumber}
-        ${guessResults}
-        ${isGameWon ? `Won in ${guessedLetters.length} guesses` :
-                `I got ${correctGuesses} correct`}`
+async function shareResults() {
+const shareText =`🎮 Hangman #${hangmanNumber}
+${guessResults}
+${isGameWon ?
+`Won in ${guessedLetters.length} guesses` :
+`I got ${correctGuesses} correct`}
+Download here: https://github.com/layyzzee/AssemblyEndgame`
 
         try {
             await navigator.clipboard.writeText(shareText)
@@ -30,10 +32,7 @@ export default function Share({ currentWord, guessedLetters, isGameWon }) {
     }
 
     return (
-        <button
-            className="share-button"
-            onClick={shareResults}
-        >
+        <button className="share-button" onClick={shareResults}>
             {copied ? "Copied! ✓" : "Share 🔗"}
         </button>
     )
