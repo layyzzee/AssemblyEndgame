@@ -3,16 +3,18 @@ import { useState } from "react"
 export default function Share({ currentWord, guessedLetters, isGameWon }) {
     const [copied, setCopied] = useState(false)
 
-    const guessResults = guessedLetters.map(letter =>
-        currentWord.includes(letter) ? "🟩" : "🟥"
-    ).join("")
+    const guessResults = guessedLetters.map(letter =>currentWord
+        .includes(letter) ? "🟩" : "🟥").join("")
+
+    const hangmanNumber = Math.floor((new Date() - new Date("2026-08-17")) 
+    / (1000 * 60 * 60 * 24)) + 1
 
     async function shareResults() {
-        const shareText = `🎮 Hangman #42
+        const shareText = `🎮 Hangman #${hangmanNumber}
         ${guessResults}
-        ${isGameWon ? `Won in ${guessedLetters.length} guesses` : 
-        `I got ${guessedLetters.length} correct`}`
-        
+        ${isGameWon ? `Won in ${guessedLetters.length} guesses` :
+                `I got ${guessedLetters.length} correct`}`
+
         try {
             await navigator.clipboard.writeText(shareText)
             setCopied(true)
