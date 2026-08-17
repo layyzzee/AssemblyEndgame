@@ -15,7 +15,7 @@ async function shareResults() {
 const shareText =`🎮 HangFive #${hangmanNumber} ${correctGuesses}/5
 ${guessResults}
 ${isGameWon ?
-`Won in ${guessedLetters.length} guesses\n` : ""}Download here: https://github.com/layyzzee/AssemblyEndgame`
+`Won in ${guessedLetters.length} guesses\n` : ""}Play here: https://layyzzee.github.io/HangFive/`
 
         try {
             await navigator.clipboard.writeText(shareText)
