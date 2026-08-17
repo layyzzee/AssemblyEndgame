@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { getFarewellText, getRandomWord } from "./utils"
+import { getFarewellText, getDailyWord } from "./utils"
 import { languages } from "./languages"
 import Confetti from "react-confetti"
 import clsx from "clsx"
@@ -8,14 +8,14 @@ import Status from "./components/Status"
 import Languages from "./components/Languages"
 import CurrentWord from "./components/CurrentWord"
 import Keyboard from "./components/Keyboard"
-import NewGame from "./components/NewGame"
+import Share from "./components/Share"
 import Farewell from "./components/Farewell"
 import GuessCounter from "./components/GuessCounter"
 import ScreenReader from "./components/ScreenReader"
 
 export default function AssemblyEndgame() {
 
-  const [currentWord, setCurrentWord] = useState(() => getRandomWord().toUpperCase())
+  const [currentWord, setCurrentWord] = useState(() => getDailyWord().toUpperCase())
   const [guessedLetters, setGuessedLetters] = useState([])
 
   const wrongGuessCount = guessedLetters.filter(letter =>
@@ -75,8 +75,10 @@ export default function AssemblyEndgame() {
         guessLetter={guessLetter}
         currentWord={currentWord}
         isGameOver={isGameOver} />
-      {isGameOver && <NewGame
-        startNewGame={startNewGame} />}
+      {isGameOver && <Share
+        currentWord={currentWord}
+        guessedLetters={guessedLetters}
+        isGameWon={isGameWon} />}
     </main>
   )
 }
