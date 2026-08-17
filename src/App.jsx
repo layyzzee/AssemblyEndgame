@@ -8,6 +8,7 @@ import CurrentWord from "./components/CurrentWord"
 import Keyboard from "./components/Keyboard"
 import NewGame from "./components/NewGame"
 import { getFarewellText } from "./utils"
+import Farewell from "./components/Farewell"
 
 export default function AssemblyEndgame() {
 
@@ -30,7 +31,10 @@ export default function AssemblyEndgame() {
     <main>
       <Header />
       {isGameOver ? <Status 
-      isGameWon={isGameWon} /> : <p>{getFarewellText(languages[wrongGuessCount-1].name)}</p>}
+      isGameWon={isGameWon} /> : <Farewell 
+      wrongGuessCount={wrongGuessCount}
+      guessedLetters={guessedLetters}
+      currentWord={currentWord} />}
       <Languages
         wrongGuessCount={wrongGuessCount}
       />
