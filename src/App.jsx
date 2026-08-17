@@ -30,11 +30,11 @@ export default function AssemblyEndgame() {
   return (
     <main>
       <Header />
-      {isGameOver ? <Status 
-      isGameWon={isGameWon} /> : <Farewell 
-      wrongGuessCount={wrongGuessCount}
-      guessedLetters={guessedLetters}
-      currentWord={currentWord} />}
+      {isGameOver ? <Status
+        isGameWon={isGameWon} /> : <Farewell
+        wrongGuessCount={wrongGuessCount}
+        guessedLetters={guessedLetters}
+        currentWord={currentWord} />}
       <Languages
         wrongGuessCount={wrongGuessCount}
       />
@@ -42,6 +42,16 @@ export default function AssemblyEndgame() {
         currentWord={currentWord}
         guessedLetters={guessedLetters}
       />
+      <section
+        className="sr-only"
+        aria-live="polite"
+        role="status"
+      >
+        <p>Current word: {currentWord.split("").map(letter =>
+          guessedLetters.includes(letter) ? letter + "." : "blank.")
+          .join(" ")}</p>
+
+      </section>
       <Keyboard
         alphabet={alphabet}
         guessedLetters={guessedLetters}
