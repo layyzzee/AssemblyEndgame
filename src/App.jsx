@@ -39,7 +39,9 @@ export default function AssemblyEndgame() {
     <main>
       <Header />
       {isOver && <Status />}
-      <Languages />
+      <Languages 
+        wrongGuessCount={wrongGuessCount}
+      />
       <CurrentWord
         currentWord={currentWord}
         guessedLetters={guessedLetters}

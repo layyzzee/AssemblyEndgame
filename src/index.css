@@ -60,6 +60,7 @@ body {
 .chip {
   border-radius: 5px;
   padding: 5px;
+  position: relative;
 }
 
 span.chip.lost::before {
