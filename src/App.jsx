@@ -7,6 +7,7 @@ import Languages from "./components/Languages"
 import CurrentWord from "./components/CurrentWord"
 import Keyboard from "./components/Keyboard"
 import NewGame from "./components/NewGame"
+import {utils} from "./utils"
 
 export default function AssemblyEndgame() {
 
