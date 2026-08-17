@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { getFarewellText, getRandomWord } from "./utils"
 import { languages } from "./languages"
+import Confetti from "react-confetti"
 import clsx from "clsx"
 import Header from "./components/Header"
 import Status from "./components/Status"
@@ -27,7 +28,7 @@ export default function AssemblyEndgame() {
     setCurrentWord(getRandomWord().toUpperCase())
     setGuessedLetters([])
   }
-  
+
   const numGuessesLeft = languages.length - 1
   const isGameWon = currentWord.split("").every(letter => guessedLetters.includes(letter))
   const isGameLost = wrongGuessCount >= numGuessesLeft
@@ -37,6 +38,11 @@ export default function AssemblyEndgame() {
 
   return (
     <main>
+      {isGameWon &&
+        <Confetti
+          recycle={false}
+          numberOfPieces={1000}
+        />}
       <Header />
       {isGameOver ? <Status
         isGameWon={isGameWon} /> : <Farewell
