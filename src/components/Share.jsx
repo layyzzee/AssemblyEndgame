@@ -6,6 +6,8 @@ export default function Share({ currentWord, guessedLetters, isGameWon }) {
     const guessResults = currentWord.split("").map(letter => guessedLetters
         .includes(letter) ? "🟩" : "🟥").join("")
 
+        const correctGuesses = guessedLetters.filter(letter => currentWord.includes(letter)).length
+
     const hangmanNumber = Math.floor((new Date() - new Date("2026-08-17")) 
     / (1000 * 60 * 60 * 24)) + 1
 
@@ -13,7 +15,7 @@ export default function Share({ currentWord, guessedLetters, isGameWon }) {
         const shareText = `🎮 Hangman #${hangmanNumber}
         ${guessResults}
         ${isGameWon ? `Won in ${guessedLetters.length} guesses` :
-                `I got ${guessedLetters.length} correct`}`
+                `I got ${correctGuesses} correct`}`
 
         try {
             await navigator.clipboard.writeText(shareText)
