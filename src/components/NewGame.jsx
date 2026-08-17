@@ -1,6 +1,5 @@
 export default function NewGame() {
-    const text="New Game"
     return (
-        <button className="new-game-button">{text}</button>
+        <button className="new-game-button">New Game</button>
     )
 }
