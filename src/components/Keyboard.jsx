@@ -11,6 +11,7 @@ export default function Keyboard(props) {
                     props.currentWord.toUpperCase().includes(char.toUpperCase()) && "correct",
                     !props.currentWord.toUpperCase().includes(char.toUpperCase()) && props.guessedLetters.includes(char.toUpperCase()) && "wrong"
                 )}
+                disabled={props.isGameOver}
                 onClick={() => props.guessLetter(char.toUpperCase())}>{char}</button>
         )
     })

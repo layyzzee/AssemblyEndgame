@@ -46,7 +46,8 @@ export default function AssemblyEndgame() {
         alphabet={alphabet}
         guessedLetters={guessedLetters}
         guessLetter={guessLetter}
-        currentWord={currentWord} />
+        currentWord={currentWord}
+        isGameOver={isGameOver} />
       {isGameOver && <NewGame />}
     </main>
   )
