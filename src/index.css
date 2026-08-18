@@ -62,7 +62,7 @@ body {
   gap: 2px;
   max-width: 350px;
   justify-content: center;
-  margin: 0 auto 25px;
+  margin: 25px auto;
 }
 
 .chip {
@@ -89,12 +89,12 @@ span.chip.lost::before {
   display: flex;
   justify-content: center;
   gap: 5px;
-  margin-bottom: 40px;
+  margin: 25px auto;
 }
 
 .letter {
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   background-color: #323232;
   color:#1FB15F;
   display: flex;
@@ -104,8 +104,8 @@ span.chip.lost::before {
 }
 
 .hidden-letter {
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   background-color: #323232;
   display: flex;
   justify-content: center;
@@ -114,8 +114,8 @@ span.chip.lost::before {
 }
 
 .letter-missed {
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   background-color: #323232;
   color:#D02B2B;
   display: flex;
@@ -130,14 +130,15 @@ span.chip.lost::before {
   justify-content: center;
   gap: 8px;
   max-width: 400px;
-  margin: 0 auto 35px;
+  margin: 25px auto;
 }
 
 .keyboard-button {
-  height: 50px;
-  width: 50px;
+  height: 37px;
+  width: 37px;
   border-radius: 5px;
-  background-color: goldenrod;
+  background-color: #323232;
+  color: #f5f5f5;
   border: 1px solid #f5f5f5;
   gap: 10px;
   cursor: pointer;
@@ -145,10 +146,12 @@ span.chip.lost::before {
 
 .keyboard-button.guessed.correct {
   background-color: #1FB15F;
+  border: 1px solid #f5f5f5;
 }
 
 .keyboard-button.guessed.wrong {
   background-color: #D02B2B;
+  border: 1px solid #f5f5f5;
 }
 
 .share-button {
@@ -161,8 +164,9 @@ span.chip.lost::before {
   border-radius: 5px;
   height: 40px;
   width: 250px;
-  margin: 0 auto;
+  margin: 25px auto;
   cursor: pointer;
+  font-size: 1.25rem;
 }
 
 .farewell-correct {
@@ -220,5 +224,6 @@ span.chip.lost::before {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto 25px;
+  margin: 25px auto;
+  font-size: 2rem;
 }
