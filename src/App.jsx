@@ -46,6 +46,9 @@ export default function AssemblyEndgame() {
         wrongGuessCount={wrongGuessCount}
         guessedLetters={guessedLetters}
         currentWord={currentWord} />}
+      <GuessCounter
+        numGuessesLeft={numGuessesLeft}
+        wrongGuessCount={wrongGuessCount} />
       <Languages
         wrongGuessCount={wrongGuessCount}
       />
@@ -61,9 +64,6 @@ export default function AssemblyEndgame() {
         numGuessesLeft={numGuessesLeft}
         wrongGuessCount={wrongGuessCount}
       />
-      <GuessCounter
-        numGuessesLeft={numGuessesLeft}
-        wrongGuessCount={wrongGuessCount} />
       <Keyboard
         alphabet={alphabet}
         guessedLetters={guessedLetters}
@@ -71,8 +71,8 @@ export default function AssemblyEndgame() {
         currentWord={currentWord}
         isGameOver={isGameOver} />
       {isGameOver && <Share
-        currentWord={currentWord} 
-        guessedLetters={guessedLetters} 
+        currentWord={currentWord}
+        guessedLetters={guessedLetters}
         isGameWon={isGameWon} />}
     </main>
   )

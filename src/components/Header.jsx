@@ -1,5 +1,5 @@
 export default function Header(){
-    const title="Assembly: Endgame"
+    const title="HangFive"
     const description="Guess the word in under 8 attempts to keep the programming world safe from Assembly!"
     return (
         <div className="header-container">
