@@ -9,6 +9,14 @@
   --empty-guess-color: #7A5EA7;
 }
 
+[data-theme="light"] {
+  --background-color: #ffffff;
+  --letter-color: #cccccc;
+  --text-color: #242424;
+  --border-color: #0a0a0a;
+  --muted-text: #666666;
+}
+
 * {
   box-sizing: border-box;
 }

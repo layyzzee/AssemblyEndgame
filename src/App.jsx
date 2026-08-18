@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { getDailyWord, getFarewellText } from "./utils"
 import { languages } from "./languages"
 import Confetti from "react-confetti"
@@ -17,6 +17,12 @@ export default function AssemblyEndgame() {
 
   const [currentWord, setCurrentWord] = useState(() => getDailyWord().toUpperCase())
   const [guessedLetters, setGuessedLetters] = useState([])
+  const [theme, setTheme] = useState("light")
+
+  useEffect(() => {
+  document.documentElement.setAttribute("data-theme", theme)
+  }, [theme])
+
 
   const wrongGuessCount = guessedLetters.filter(letter =>
     !currentWord.includes(letter)).length
