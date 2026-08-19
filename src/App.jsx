@@ -3,6 +3,7 @@ import { getDailyWord, getFarewellText } from "./utils"
 import { languages } from "./languages"
 import Confetti from "react-confetti"
 import clsx from "clsx"
+import ToggleDark from "./components/ToggleDark"
 import Header from "./components/Header"
 import Status from "./components/Status"
 import Languages from "./components/Languages"
@@ -17,10 +18,10 @@ export default function AssemblyEndgame() {
 
   const [currentWord, setCurrentWord] = useState(() => getDailyWord().toUpperCase())
   const [guessedLetters, setGuessedLetters] = useState([])
-  const [theme, setTheme] = useState("light")
+  const [theme, setTheme] = useState("dark")
 
   useEffect(() => {
-  document.documentElement.setAttribute("data-theme", theme)
+    document.documentElement.setAttribute("data-theme", theme)
   }, [theme])
 
 
@@ -46,6 +47,9 @@ export default function AssemblyEndgame() {
           recycle={false}
           numberOfPieces={1000}
         />}
+      <ToggleDark
+        theme={theme}
+        setTheme={setTheme} />
       <Header />
       {isGameOver ? <Status
         isGameWon={isGameWon} /> : <Farewell

@@ -1,9 +1,4 @@
-:root{
-  --background-color: #262626;
-  --letter-color: #323232;
-  --text-color: #D9D9D9;
-  --border-color: #f5f5f5;
-  --muted-text: #777777;
+:root {
   --correct-guess-color: #1FB15F;
   --incorrect-guess-color: #D02B2B;
   --empty-guess-color: #7A5EA7;
@@ -15,6 +10,20 @@
   --text-color: #242424;
   --border-color: #0a0a0a;
   --muted-text: #666666;
+  --toggle-background: #262626;
+  --toggle-text: #D9D9D9;
+  --toggle-border: #f5f5f5;
+}
+
+[data-theme="dark"] {
+  --background-color: #262626;
+  --letter-color: #323232;
+  --text-color: #D9D9D9;
+  --border-color: #f5f5f5;
+  --muted-text: #777777;
+  --toggle-background: #ffffff;
+  --toggle-text: #242424;
+  --toggle-border: #0a0a0a;
 }
 
 * {
@@ -245,4 +254,17 @@ span.chip.lost::before {
   align-items: center;
   margin: 25px auto;
   font-size: 2rem;
+}
+
+.toggle-dark-button {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-weight: bold;
+  margin: 5px;
+  background-color: var(--toggle-background);
+  color: var(--toggle-text);
+  border: 1px solid var(--toggle-border);
 }
